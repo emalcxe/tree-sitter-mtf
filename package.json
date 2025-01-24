@@ -1,8 +1,8 @@
 {
   "name": "tree-sitter-mtf",
   "version": "0.1.0",
-  "description": "MegaMek mtf file",
-  "repository": "https://github.com/tree-sitter/tree-sitter-mtf",
+  "description": "MegaMek mtf parser",
+  "repository": "https://github.com/emalcxe/tree-sitter-mtf",
   "license": "MIT",
   "author": {
     "name": "Exclame",

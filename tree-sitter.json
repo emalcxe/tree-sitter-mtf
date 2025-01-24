@@ -13,7 +13,7 @@
   "metadata": {
     "version": "0.1.0",
     "license": "MIT",
-    "description": "MegaMek mtf file",
+    "description": "MegaMek mtf parser",
     "authors": [
       {
         "name": "Exclame",
