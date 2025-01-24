@@ -1,0 +1,213 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
+  "name": "mtf",
+  "rules": {
+    "mek": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_definition"
+      }
+    },
+    "_definition": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "limb"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "weapons"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "weapon"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "armor"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "pair"
+        }
+      ]
+    },
+    "weapons": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Weapons:"
+        },
+        {
+          "type": "FIELD",
+          "name": "wep_count",
+          "content": {
+            "type": "PATTERN",
+            "value": "[0-9]+\\n"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "weapon"
+          }
+        }
+      ]
+    },
+    "weapon": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ", "
+        },
+        {
+          "type": "FIELD",
+          "name": "location",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        }
+      ]
+    },
+    "armor": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "location",
+          "content": {
+            "type": "PATTERN",
+            "value": "[A-Z]+"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": " Armor:"
+        },
+        {
+          "type": "FIELD",
+          "name": "amount",
+          "content": {
+            "type": "PATTERN",
+            "value": "[0-9]+"
+          }
+        }
+      ]
+    },
+    "limb": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ":\n"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "empty"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[A-z0-9 -]+"
+    },
+    "empty": {
+      "type": "STRING",
+      "value": "-Empty-"
+    },
+    "chassis": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "chassis:"
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "PATTERN",
+            "value": ".+"
+          }
+        }
+      ]
+    },
+    "pair": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "PATTERN",
+            "value": ".+"
+          }
+        }
+      ]
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [
+    [
+      "weapons"
+    ],
+    [
+      "limb"
+    ]
+  ],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}

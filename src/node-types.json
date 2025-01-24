@@ -1,0 +1,154 @@
+[
+  {
+    "type": "armor",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "limb",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "empty",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mek",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "armor",
+          "named": true
+        },
+        {
+          "type": "limb",
+          "named": true
+        },
+        {
+          "type": "pair",
+          "named": true
+        },
+        {
+          "type": "weapon",
+          "named": true
+        },
+        {
+          "type": "weapons",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pair",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "weapon",
+    "named": true,
+    "fields": {
+      "location": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "weapons",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "weapon",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": " Armor:",
+    "named": false
+  },
+  {
+    "type": ", ",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": ":\n",
+    "named": false
+  },
+  {
+    "type": "Weapons:",
+    "named": false
+  },
+  {
+    "type": "empty",
+    "named": true
+  },
+  {
+    "type": "identifier",
+    "named": true
+  }
+]
