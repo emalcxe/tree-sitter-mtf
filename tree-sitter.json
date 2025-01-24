@@ -1,0 +1,35 @@
+{
+  "grammars": [
+    {
+      "name": "mtf",
+      "camelcase": "Mtf",
+      "scope": "source.mtf",
+      "file-types": [
+        ".mtf"
+      ],
+      "injection-regex": "^mtf$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "MegaMek mtf file",
+    "authors": [
+      {
+        "name": "Exclame",
+        "email": "root@exclame.dev"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/emalcxe/tree-sitter-mtf"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "node": false,
+    "python": false,
+    "rust": true,
+    "swift": false
+  }
+}
